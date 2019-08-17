@@ -1,2 +1,2 @@
 # simple-rest-go
-Simple HTTP methods for a RESTful go application.
+Simple CRUD for a RESTful go application.
