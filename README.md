@@ -1,5 +1,7 @@
 # simple-rest-go
-Simple CRUD for a RESTful go application.
+
+
+```sh
 
 docker pull mongo
 
@@ -10,3 +12,4 @@ go get go.mongodb.org/mongo-driver/mongo
 
 go build && ./rest
 
+```
