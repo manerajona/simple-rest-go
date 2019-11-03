@@ -27,7 +27,7 @@ var messages []Message
 
 func findAllMessages(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	collection := client.Database("mongodb").Collection("messages")
+	collection := client.Database("testdb").Collection("messages")
 	ctx, _ := context.WithTimeout(context.Background(), 30*time.Second)
 	cursor, err := collection.Find(ctx, bson.M{})
 	if err != nil {
@@ -56,7 +56,7 @@ func getMessage(w http.ResponseWriter, r *http.Request) {
 	var message Message
 
 	// find
-	collection := client.Database("mongodb").Collection("messages")
+	collection := client.Database("testdb").Collection("messages")
 	ctx, _ := context.WithTimeout(context.Background(), 30*time.Second)
 	err := collection.FindOne(ctx, Message{ID: id}).Decode(&message)
 	if err != nil {
