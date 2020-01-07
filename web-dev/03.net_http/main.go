@@ -9,7 +9,7 @@ import (
 
 type hotdog int
 
-func (m hotdog) ServeHTTP(res http.ResponseWriter, req *http.Request) { // implements interface ServeHTTP
+func (m hotdog) ServeHTTP(res http.ResponseWriter, req *http.Request) { // implements handler interface
 	err := req.ParseForm()
 	if err != nil {
 		log.Fatalln(err)
@@ -42,5 +42,7 @@ func init() {
 
 func main() {
 	var d hotdog // This is zero by default
-	http.ListenAndServe(":8080", d)
+	http.handler(d) // Receives a type that implements the Handler interface
+	http.ListenAndServe(":8080", nil) 
+	//http.ListenAndServe(":8080", d) // Receives a type that implements the Handler interface
 }
