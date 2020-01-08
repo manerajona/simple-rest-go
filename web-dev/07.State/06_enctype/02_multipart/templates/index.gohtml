@@ -9,6 +9,7 @@
     <br>
     <label for="sub">Subscribed</label>
     <input type="checkbox" id="sub" name="subscribe">
+    <input type="file" name="file">
     <br>
     <input type="submit">
 </form>
@@ -16,7 +17,7 @@
 <br>
 
 {{if .}}
-<h1>BODY: {{.}}</h1>
+<p>BODY: {{.}}</p>
 {{end}}
 
 {{template "footer"}}
