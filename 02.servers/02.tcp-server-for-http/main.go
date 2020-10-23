@@ -43,8 +43,14 @@ func request(conn net.Conn) {
 		fmt.Println(ln)
 		if i == 0 {
 			// request line
-			m := strings.Fields(ln)[0]
+			m := strings.Fields(ln)[0] // method
 			fmt.Println("***METHOD", m)
+
+			u := strings.Fields(ln)[1] // uri
+			fmt.Println("***URI", u)
+
+			p := strings.Fields(ln)[2] // protoc
+			fmt.Println("***PROTOC", p)
 		}
 		if ln == "" {
 			// headers are done
