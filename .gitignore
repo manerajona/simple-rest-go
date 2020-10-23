@@ -13,3 +13,8 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+# We're using templates instead
+*.html
+web-dev/*
+web-dev
