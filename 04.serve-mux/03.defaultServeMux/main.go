@@ -5,7 +5,9 @@ import (
 	"net/http"
 )
 
-func d(res http.ResponseWriter, req *http.Request) {
+type hotdog int
+
+func (d hotdog) ServeHTTP(res http.ResponseWriter, req *http.Request) {
 	io.WriteString(res, "dog dog dog")
 }
 
@@ -14,7 +16,9 @@ func c(res http.ResponseWriter, req *http.Request) {
 }
 
 func main() {
-	http.HandleFunc("/dog/", d) // accepts /dog/*
+	var d hotdog // underlyng type Handler
+
+	http.Handle("/dog", d)
 	http.HandleFunc("/cat", c)
 
 	http.ListenAndServe(":8080", nil) // since is nil use default mux
