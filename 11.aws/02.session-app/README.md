@@ -15,4 +15,4 @@
   - sudo chmod 700 sessionapp
   - sudo ./sessionapp &> go.out
 
-5. go your-dns:8081
+5. go your-dns:80
