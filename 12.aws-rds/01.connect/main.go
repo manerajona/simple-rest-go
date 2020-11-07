@@ -13,7 +13,6 @@ var db *sql.DB
 var err error
 
 func main() {
-	// user:password@tcp(localhost:5555)/dbname?charset=utf8
 
 	db, err = sql.Open("mysql", "admin:mypassword@tcp(database-go.chznppueu3wj.us-east-1.rds.amazonaws.com:3306)/testdb?charset=utf8")
 	check(err)
