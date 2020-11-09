@@ -16,3 +16,7 @@
 
 # We're using templates instead
 *.html
+
+# ssl
+*.pem
+*.xxjson

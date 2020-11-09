@@ -3,13 +3,14 @@ package main
 import (
 	"crypto/sha1"
 	"fmt"
-	"github.com/satori/go.uuid"
 	"html/template"
 	"io"
 	"net/http"
 	"os"
 	"path/filepath"
 	"strings"
+
+	uuid "github.com/satori/go.uuid"
 )
 
 var tpl *template.Template
@@ -27,7 +28,7 @@ func main() {
 func index(w http.ResponseWriter, req *http.Request) {
 	c := getCookie(w, req)
 	// process form submission
-	if req.Method == http.MethodPost {
+	if req.Method == http.MethodPost { //POST
 		mf, fh, err := req.FormFile("nf")
 		if err != nil {
 			fmt.Println(err)
