@@ -6,6 +6,7 @@ import (
 	"net/http"
 
 	"github.com/julienschmidt/httprouter"
+	"github.com/manerajona/web-dev-go/21.mongodb/01.update-user-controller/models"
 	"gopkg.in/mgo.v2"
 )
 
