@@ -10,8 +10,9 @@ import (
 
 func main() {
 	r := httprouter.New()
-	// Get a UserController instance
-	uc := controllers.NewUserController(getSession())
+
+	uc := controllers.NewUserController(getSession()) // Get a UserController instance
+
 	r.GET("/user/:id", uc.GetUser)
 	r.POST("/user", uc.CreateUser)
 	r.DELETE("/user/:id", uc.DeleteUser)
@@ -28,3 +29,5 @@ func getSession() *mgo.Session {
 	}
 	return s
 }
+
+// docker container run -p 27017:27017 --name mongo -d mongo
