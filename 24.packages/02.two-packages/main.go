@@ -5,7 +5,7 @@ import (
 	"html/template"
 	"net/http"
 
-	"github.com/manerajona/web-dev-go/24.packages/02.two-packages/models"
+	models "github.com/manerajona/web-dev-go/24.packages/02.two-packages/models"
 )
 
 var tpl *template.Template
